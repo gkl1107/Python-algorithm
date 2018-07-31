@@ -1,0 +1,589 @@
+Last login: Fri Jul 13 13:42:52 on ttys000
+Kailu-MacBook-Air:~ kailuguan$ ipython -pylib
+=========
+ IPython
+=========
+In [1]: ls
+$                     HotPot6Bug.txt        ls-output.txt
+AllDRMRemoval/        Library/              nano.save
+Applications/         Movies/               nltk_data/
+Creative Cloud Files/ Music/                shunxu
+Desktop/              Pictures/             wavlist
+Documents/            Public/               word
+Downloads/            cali_core/            wordlis
+Dropbox/              dailyquiz             wordlist
+Favorite/             ling591/
+
+In [2]: plot(range(10))
+Out[2]: [<matplotlib.lines.Line2D at 0x10a859ad0>]
+
+In [3]: xlabel('measured')
+Out[3]: Text(0.5,23.5222,'measured')
+
+In [4]: ylabel('calculated')
+Out[4]: Text(55.8472,0.5,'calculated')
+
+In [5]: title('Measured vs calculated')
+Out[5]: Text(0.5,1,'Measured vs calculated')
+
+In [6]: grid(True)
+
+In [7]: myplot = gca()
+
+In [8]: myplot
+Out[8]: <matplotlib.axes._subplots.AxesSubplot at 0x10a031d10>
+
+In [9]: line = myplot.lines[0]
+
+In [10]: line
+Out[10]: <matplotlib.lines.Line2D at 0x10a859ad0>
+
+In [12]: line.set_marker('o')
+
+In [13]: draw()
+
+In [14]: setp(line, color="g")
+Out[14]: [None]
+
+In [15]: clf()
+
+In [16]: x = arange(100)
+
+In [17]: linear = arange(100)
+
+In [18]: square = [v * v for v in arange(0,10,0.1)]
+
+In [19]: lines = plot(x, linear, x, square)
+
+In [21]: legend(("linear", 'square'))
+Out[21]: <matplotlib.legend.Legend at 0x10d2657d0>
+
+In [22]: lines = plot(x, linear, 'g:+', x, square,'r--o')
+
+In [23]: leg = legend(("linear", 'square'), loc='upper right')
+
+In [24]: leg = legend(("linear", 'square'), loc='upper left')
+
+In [25]: t1 = text(50,50,'Hello')
+
+In [26]: t2 = figtext(0.8,0.8,'upper right')
+
+In [27]: t3 = text(20,70,r'$\pi$')
+
+In [29]: t3.set_fontsize(20)
+
+In [30]: draw()
+
+In [31]: t3.set_fontsize(50)
+
+In [32]: draw()
+
+In [33]: ax = gca()
+
+In [34]: ax.annotate('That is import', xy=(70,20))
+Out[34]: Text(70,20,'That is import')
+
+In [35]: draw()
+
+In [36]: ax.annotate('That is import', xy=(50,50), xytext=(50,70),arrowprops={
+    ...: 'facecolor':'r'})
+Out[36]: Text(50,70,'That is import')
+
+In [37]: draw()
+
+In [38]: major_locator = MultipleLocator(10)
+
+In [39]: minor_locator = MultipleLocator(5)
+
+In [40]: ax.xaxis.set_major_locator(major_locator)
+
+In [41]: ax.xaxis.set_minor_locator(minor_locator)
+
+In [42]: draw()
+
+In [43]: formatter = FormatStrFormatter('%5.2f')
+
+In [44]: ax.xaxis.set_major_formatter(formatter)
+
+In [45]: draw()
+
+In [46]: import datetime
+
+In [47]: d = datetime.datetime(2011,1,2)
+
+In [48]: d
+Out[48]: datetime.datetime(2011, 1, 2, 0, 0)
+
+In [49]: d2 = datetime.datetime(2013,10,12,1,30)
+
+In [50]: d2-d
+Out[50]: datetime.timedelta(1014, 5400)
+
+In [51]: dates = [datetime.datetime(2010,i,1) for i in range(1,13)]
+
+In [52]: dates
+Out[52]: 
+[datetime.datetime(2010, 1, 1, 0, 0),
+ datetime.datetime(2010, 2, 1, 0, 0),
+ datetime.datetime(2010, 3, 1, 0, 0),
+ datetime.datetime(2010, 4, 1, 0, 0),
+ datetime.datetime(2010, 5, 1, 0, 0),
+ datetime.datetime(2010, 6, 1, 0, 0),
+ datetime.datetime(2010, 7, 1, 0, 0),
+ datetime.datetime(2010, 8, 1, 0, 0),
+ datetime.datetime(2010, 9, 1, 0, 0),
+ datetime.datetime(2010, 10, 1, 0, 0),
+ datetime.datetime(2010, 11, 1, 0, 0),
+ datetime.datetime(2010, 12, 1, 0, 0)]
+
+In [53]: clf
+Out[53]: <function matplotlib.pyplot.clf>
+
+In [54]: clf()
+
+In [55]: p = plot(dates, range(len(dates)))
+
+In [56]: ax = lines[0]
+
+In [57]: sa
+---------------------------------------------------------------------------
+NameError                                 Traceback (most recent call last)
+<ipython-input-57-17de626c3768> in <module>()
+----> 1 sa
+
+NameError: name 'sa' is not defined
+
+In [58]: ax
+Out[58]: <matplotlib.lines.Line2D at 0x10d29de90>
+
+In [59]: ax = gca()
+
+In [60]: ax
+Out[60]: <matplotlib.axes._subplots.AxesSubplot at 0x10d56eb10>
+
+In [61]: ax.xaxis.set_major_locator(MultipleLocator(12))
+
+In [62]: draw()
+
+In [63]: ax.xaxis.set_major_locator(MultipleLocator(30))
+
+In [64]: draw()
+
+In [65]: ax.xaxis.set_major_locator(MultipleLocator(90))
+
+In [66]: draw()
+
+In [67]: ax.xaxis.set_major_locator(MultipleLocator(365))
+
+In [68]: draw()
+
+In [69]: ax.xaxis.set_major_locator(MultipleLocator(30))
+
+In [70]: draw()
+
+In [71]: dates
+Out[71]: 
+[datetime.datetime(2010, 1, 1, 0, 0),
+ datetime.datetime(2010, 2, 1, 0, 0),
+ datetime.datetime(2010, 3, 1, 0, 0),
+ datetime.datetime(2010, 4, 1, 0, 0),
+ datetime.datetime(2010, 5, 1, 0, 0),
+ datetime.datetime(2010, 6, 1, 0, 0),
+ datetime.datetime(2010, 7, 1, 0, 0),
+ datetime.datetime(2010, 8, 1, 0, 0),
+ datetime.datetime(2010, 9, 1, 0, 0),
+ datetime.datetime(2010, 10, 1, 0, 0),
+ datetime.datetime(2010, 11, 1, 0, 0),
+ datetime.datetime(2010, 12, 1, 0, 0)]
+
+In [72]: p
+Out[72]: [<matplotlib.lines.Line2D at 0x10d2b02d0>]
+
+In [73]: ax.xaxis.set_major_locator(MultipleLocator(60))
+
+In [74]: draw()
+
+In [75]: ax.xaxis.set_major_formatter(DateFormattor('%m.%d'))
+---------------------------------------------------------------------------
+NameError                                 Traceback (most recent call last)
+<ipython-input-75-7cb3530c0b34> in <module>()
+----> 1 ax.xaxis.set_major_formatter(DateFormattor('%m.%d'))
+
+NameError: name 'DateFormattor' is not defined
+
+In [76]: ax.xaxis.set_major_formatter(DateFormatter('%m.%d'))
+
+In [77]: draw()
+
+In [78]: ax.xaxis.set_major_formatter(DateFormatter('%y.%m'))
+
+In [79]: ax.xaxis.set_major_formatter(DateFormatter('%m'))
+
+In [80]: drwa()
+---------------------------------------------------------------------------
+NameError                                 Traceback (most recent call last)
+<ipython-input-80-b365af8bab66> in <module>()
+----> 1 drwa()
+
+NameError: name 'drwa' is not defined
+
+In [81]: draw()
+
+In [82]: ax.xaxis.set_major_locator(MultipleLocator(12))
+
+In [83]: ax.xaxis.set_major_locator(MultipleLocator(30))
+
+In [84]: fig = gcf()
+
+In [85]: fig.set_facecolor('g')
+
+In [86]: draw()
+
+In [87]: fig.set_facecolor('hot pink')
+---------------------------------------------------------------------------
+ValueError                                Traceback (most recent call last)
+<ipython-input-87-c042ee1ea0d6> in <module>()
+----> 1 fig.set_facecolor('hot pink')
+
+/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/matplotlib/figure.pyc in set_facecolor(self, color)
+    965         ACCEPTS: any matplotlib color - see help(colors)
+    966         """
+--> 967         self.patch.set_facecolor(color)
+    968 
+    969     def set_dpi(self, val):
+
+/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/matplotlib/patches.pyc in set_facecolor(self, color)
+    313         """
+    314         self._original_facecolor = color
+--> 315         self._set_facecolor(color)
+    316 
+    317     def set_fc(self, color):
+
+/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/matplotlib/patches.pyc in _set_facecolor(self, color)
+    303             color = mpl.rcParams['patch.facecolor']
+    304         alpha = self._alpha if self._fill else 0
+--> 305         self._facecolor = colors.to_rgba(color, alpha)
+    306         self.stale = True
+    307 
+
+/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/matplotlib/colors.pyc in to_rgba(c, alpha)
+    155         rgba = _colors_full_map.cache[c, alpha]
+    156     except (KeyError, TypeError):  # Not in cache, or unhashable.
+--> 157         rgba = _to_rgba_no_colorcycle(c, alpha)
+    158         try:
+    159             _colors_full_map.cache[c, alpha] = rgba
+
+/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/matplotlib/colors.pyc in _to_rgba_no_colorcycle(c, alpha)
+    199         except ValueError:
+    200             pass
+--> 201         raise ValueError("Invalid RGBA argument: {!r}".format(orig_c))
+    202     # tuple color.
+    203     c = np.array(c)
+
+ValueError: Invalid RGBA argument: 'hot pink'
+
+In [88]: fig.set_facecolor('light blue')
+---------------------------------------------------------------------------
+ValueError                                Traceback (most recent call last)
+<ipython-input-88-e4b9a7fc6435> in <module>()
+----> 1 fig.set_facecolor('light blue')
+
+/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/matplotlib/figure.pyc in set_facecolor(self, color)
+    965         ACCEPTS: any matplotlib color - see help(colors)
+    966         """
+--> 967         self.patch.set_facecolor(color)
+    968 
+    969     def set_dpi(self, val):
+
+/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/matplotlib/patches.pyc in set_facecolor(self, color)
+    313         """
+    314         self._original_facecolor = color
+--> 315         self._set_facecolor(color)
+    316 
+    317     def set_fc(self, color):
+
+/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/matplotlib/patches.pyc in _set_facecolor(self, color)
+    303             color = mpl.rcParams['patch.facecolor']
+    304         alpha = self._alpha if self._fill else 0
+--> 305         self._facecolor = colors.to_rgba(color, alpha)
+    306         self.stale = True
+    307 
+
+/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/matplotlib/colors.pyc in to_rgba(c, alpha)
+    155         rgba = _colors_full_map.cache[c, alpha]
+    156     except (KeyError, TypeError):  # Not in cache, or unhashable.
+--> 157         rgba = _to_rgba_no_colorcycle(c, alpha)
+    158         try:
+    159             _colors_full_map.cache[c, alpha] = rgba
+
+/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/matplotlib/colors.pyc in _to_rgba_no_colorcycle(c, alpha)
+    199         except ValueError:
+    200             pass
+--> 201         raise ValueError("Invalid RGBA argument: {!r}".format(orig_c))
+    202     # tuple color.
+    203     c = np.array(c)
+
+ValueError: Invalid RGBA argument: 'light blue'
+
+In [89]: clf()
+
+In [90]: subplot(111)
+Out[90]: <matplotlib.axes._subplots.AxesSubplot at 0x10d5bbb90>
+
+In [91]: clf()
+
+In [92]: subplot(211)
+Out[92]: <matplotlib.axes._subplots.AxesSubplot at 0x10de9d7d0>
+
+In [93]: subplot(221)
+Out[93]: <matplotlib.axes._subplots.AxesSubplot at 0x10d5bba90>
+
+In [94]: subplot(222)
+Out[94]: <matplotlib.axes._subplots.AxesSubplot at 0x10dff91d0>
+
+In [95]: subplot(212)
+Out[95]: <matplotlib.axes._subplots.AxesSubplot at 0x10e04c550>
+
+In [96]: clf
+Out[96]: <function matplotlib.pyplot.clf>
+
+In [97]: clf()
+
+In [98]: subplot(212)
+Out[98]: <matplotlib.axes._subplots.AxesSubplot at 0x10e029410>
+
+In [99]: clf()
+
+In [100]: subplot(211)
+Out[100]: <matplotlib.axes._subplots.AxesSubplot at 0x10e0872d0>
+
+In [101]: clf()
+
+In [102]: plot(range(10))
+Out[102]: [<matplotlib.lines.Line2D at 0x10e0f7610>]
+
+In [103]: a = axes([0.2,0.5,0.25,0.25])
+
+In [104]: plot(range(10))
+Out[104]: [<matplotlib.lines.Line2D at 0x10d290290>]
+
+In [105]: fig
+Out[105]: <Figure size 640x480 with 2 Axes>
+
+In [106]: fig.set_facecolor('b')
+
+In [107]: fig.set_facecolor('r')
+
+In [108]: fig.set_facecolor('w')
+
+In [109]: fig.set_facecolor('grey')
+
+In [110]: fig.set_facecolor()
+---------------------------------------------------------------------------
+TypeError                                 Traceback (most recent call last)
+<ipython-input-110-0cb6e527bef0> in <module>()
+----> 1 fig.set_facecolor()
+
+TypeError: set_facecolor() takes exactly 2 arguments (1 given)
+
+In [111]: fig.set_gid()
+---------------------------------------------------------------------------
+TypeError                                 Traceback (most recent call last)
+<ipython-input-111-b8d9b7a6b4fb> in <module>()
+----> 1 fig.set_gid()
+
+TypeError: set_gid() takes exactly 2 arguments (1 given)
+
+In [112]: fig.set_lable('what')
+---------------------------------------------------------------------------
+AttributeError                            Traceback (most recent call last)
+<ipython-input-112-cbb118e96dc7> in <module>()
+----> 1 fig.set_lable('what')
+
+AttributeError: 'Figure' object has no attribute 'set_lable'
+
+In [113]: fig.set_label('what')
+
+In [114]: fig.set_size_inches(2,2)
+
+In [115]: draw()
+
+In [116]: fig.set_size_inches(5,5)
+
+In [117]: fig.set_size_inches(7,5)
+
+In [118]: fig.set_size_inches(10,7)
+
+In [119]: fig.set_size_inches(10,5)
+
+In [120]: fig.set_size_inches(7,5)
+
+In [121]: fig.set_size_inches(8,6)
+
+In [122]: clf()
+
+In [123]: bar([1,2,3], [100,90,120])
+Out[123]: <BarContainer object of 3 artists>
+
+In [124]: clf()
+
+In [125]: barh([1,2,3], [100,90,120])
+Out[125]: <BarContainer object of 3 artists>
+
+In [126]: clf()
+
+In [127]: yrange = (2,1)
+
+In [128]: xranges = ([0, 0.5], [1,1], [4,1])
+
+In [129]: broken_barh(xranges, yrange)
+Out[129]: <matplotlib.collections.BrokenBarHCollection at 0x10cfd5110>
+
+In [130]: xranges = ([0.5, 0.5], [1,1], [4,1])
+
+In [131]: broken_barh(xranges, yrange)
+Out[131]: <matplotlib.collections.BrokenBarHCollection at 0x10cfbdc50>
+
+In [132]: xranges = ([0.5, 0.5], [2,1], [4,1])
+
+In [133]: broken_barh(xranges, yrange)
+Out[133]: <matplotlib.collections.BrokenBarHCollection at 0x10ebdf8d0>
+
+In [134]: draw()
+
+In [135]: xranges = ([0, 0.5], [1,1], [4,1])
+
+In [136]: broken_barh(xranges, yrange)
+Out[136]: <matplotlib.collections.BrokenBarHCollection at 0x10ebee2d0>
+
+In [137]: clf()
+
+In [138]: xranges = ([0, 0.5], [1,1], [4,1])
+
+In [139]: yrange = (2,1)
+
+In [140]: broken_barh(xranges, yrange)
+Out[140]: <matplotlib.collections.BrokenBarHCollection at 0x10ebf7410>
+
+In [141]: ax = gca()
+
+In [142]: ax.set_ylim(0,5)
+Out[142]: (0, 5)
+
+In [143]: clf()
+
+In [144]: boxplot(range(2,10),range(1,5))
+Out[144]: 
+{'boxes': [<matplotlib.lines.Line2D at 0x10ae36a10>],
+ 'caps': [<matplotlib.lines.Line2D at 0x10ae3f250>,
+  <matplotlib.lines.Line2D at 0x10ae3f610>],
+ 'fliers': [<matplotlib.lines.Line2D at 0x10ae3fd90>],
+ 'means': [],
+ 'medians': [<matplotlib.lines.Line2D at 0x10ae3f9d0>],
+ 'whiskers': [<matplotlib.lines.Line2D at 0x10ae36a90>,
+  <matplotlib.lines.Line2D at 0x10ae36e50>]}
+
+In [145]: clf()
+
+In [146]: x = y = range(10)
+
+In [147]: z = ones(10)
+
+In [148]: z
+Out[148]: array([1., 1., 1., 1., 1., 1., 1., 1., 1., 1.])
+
+In [149]: z = ones((10,10))
+
+In [150]: z
+Out[150]: 
+array([[1., 1., 1., 1., 1., 1., 1., 1., 1., 1.],
+       [1., 1., 1., 1., 1., 1., 1., 1., 1., 1.],
+       [1., 1., 1., 1., 1., 1., 1., 1., 1., 1.],
+       [1., 1., 1., 1., 1., 1., 1., 1., 1., 1.],
+       [1., 1., 1., 1., 1., 1., 1., 1., 1., 1.],
+       [1., 1., 1., 1., 1., 1., 1., 1., 1., 1.],
+       [1., 1., 1., 1., 1., 1., 1., 1., 1., 1.],
+       [1., 1., 1., 1., 1., 1., 1., 1., 1., 1.],
+       [1., 1., 1., 1., 1., 1., 1., 1., 1., 1.],
+       [1., 1., 1., 1., 1., 1., 1., 1., 1., 1.]])
+
+In [151]: z[1,5]=7
+
+In [152]: z
+Out[152]: 
+array([[1., 1., 1., 1., 1., 1., 1., 1., 1., 1.],
+       [1., 1., 1., 1., 1., 7., 1., 1., 1., 1.],
+       [1., 1., 1., 1., 1., 1., 1., 1., 1., 1.],
+       [1., 1., 1., 1., 1., 1., 1., 1., 1., 1.],
+       [1., 1., 1., 1., 1., 1., 1., 1., 1., 1.],
+       [1., 1., 1., 1., 1., 1., 1., 1., 1., 1.],
+       [1., 1., 1., 1., 1., 1., 1., 1., 1., 1.],
+       [1., 1., 1., 1., 1., 1., 1., 1., 1., 1.],
+       [1., 1., 1., 1., 1., 1., 1., 1., 1., 1.],
+       [1., 1., 1., 1., 1., 1., 1., 1., 1., 1.]])
+
+In [153]: z[4,8]=9
+
+In [154]: z[7,2]=3
+
+In [155]: z[9,7]=4
+
+In [156]: z
+Out[156]: 
+array([[1., 1., 1., 1., 1., 1., 1., 1., 1., 1.],
+       [1., 1., 1., 1., 1., 7., 1., 1., 1., 1.],
+       [1., 1., 1., 1., 1., 1., 1., 1., 1., 1.],
+       [1., 1., 1., 1., 1., 1., 1., 1., 1., 1.],
+       [1., 1., 1., 1., 1., 1., 1., 1., 9., 1.],
+       [1., 1., 1., 1., 1., 1., 1., 1., 1., 1.],
+       [1., 1., 1., 1., 1., 1., 1., 1., 1., 1.],
+       [1., 1., 3., 1., 1., 1., 1., 1., 1., 1.],
+       [1., 1., 1., 1., 1., 1., 1., 1., 1., 1.],
+       [1., 1., 1., 1., 1., 1., 1., 4., 1., 1.]])
+
+In [157]: contour(x,y,z)
+Out[157]: <matplotlib.contour.QuadContourSet at 0x10ae7e590>
+
+In [158]: dotplot(x,y,z)
+---------------------------------------------------------------------------
+NameError                                 Traceback (most recent call last)
+<ipython-input-158-107fb30261fd> in <module>()
+----> 1 dotplot(x,y,z)
+
+NameError: name 'dotplot' is not defined
+
+In [159]: plot(x,y,z)
+Out[159]: 
+[<matplotlib.lines.Line2D at 0x10a88e810>,
+ <matplotlib.lines.Line2D at 0x10e14f510>,
+ <matplotlib.lines.Line2D at 0x10e14fa10>,
+ <matplotlib.lines.Line2D at 0x10e14fdd0>,
+ <matplotlib.lines.Line2D at 0x10e14fed0>,
+ <matplotlib.lines.Line2D at 0x10e14ff90>,
+ <matplotlib.lines.Line2D at 0x10e1312d0>,
+ <matplotlib.lines.Line2D at 0x10e131810>,
+ <matplotlib.lines.Line2D at 0x10d08b050>,
+ <matplotlib.lines.Line2D at 0x10d08b110>,
+ <matplotlib.lines.Line2D at 0x10d08b1d0>]
+
+In [160]: clf()
+
+In [161]: contourf(x,y,z)
+Out[161]: <matplotlib.contour.QuadContourSet at 0x10ae5d5d0>
+
+In [162]: clf()
+
+In [163]: random
+Out[163]: <module 'numpy.random' from '/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/numpy/random/__init__.pyc'>
+
+In [164]: r = random.normal(size=1000)
+
+In [165]: hist(r)
+Out[165]: 
+(array([ 10.,  36., 114., 186., 257., 192., 133.,  58.,  12.,   2.]),
+ array([-2.83867598, -2.21255855, -1.58644112, -0.9603237 , -0.33420627,
+         0.29191116,  0.91802858,  1.54414601,  2.17026343,  2.79638086,
+         3.42249829]),
+ <a list of 10 Patch objects>)
+
+In [166]: 

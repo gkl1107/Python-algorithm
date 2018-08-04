@@ -1,3 +1,5 @@
+#!/usr/bin/python
+
 '''
 A function that implements a substitution cipher.
 the function takea two parameters, the message you want to encrypt, 

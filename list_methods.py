@@ -1,5 +1,7 @@
 #!/usr/bin/python
 
+#practice implement Python functions
+
 # count
 def count(i, aList):
     count = 0
